@@ -1,0 +1,65 @@
+@font-face{
+  font-family: "Class";
+  src: url(/fonts/Class.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body, html{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #ECF1F7;
+  color: #ECF1F7;
+}
+
+/* NavBar Fixed */
+
+header{
+  width: 100%;
+  height: 15vh;
+  position: fixed;
+  top: 0;
+  background-color: #153F79;
+  display: flex;
+  justify-content: center;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger{
+
+}
+
+.brand{
+  font-size: 40px;
+  font-family: "Class", cursive;
+  letter-spacing: 3px;
+}
+
+.shop{
+
+}
+
+/* Page 1 */
+
+.page1{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.custom{
+  width: 100%;
+  height: 50vh;
+  background: url("/img/bgHome.jpg");
+  background-size: cover;
+  background-position: center;
+}
