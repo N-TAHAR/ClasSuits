@@ -17,42 +17,43 @@
 }
 
 body, html{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   margin: 0;
   background-color: #ECF1F7;
   color: #ECF1F7;
-  overflow-x: hidden;
 }
 
 /* NavBar Fixed */
 
 header{
-  width: 100%;
+  width: 100vw;
   height: 15vh;
   position: fixed;
   top: 0;
   background-color: #153F79;
+  border-bottom: 2px solid #ECF1F7;
   display: flex;
   justify-content: center;
+  z-index: 1000;
 }
 
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 }
 
 nav ul{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 95vw;
 }
 
 .burger{
-  width: 6vh;
+  width: 6vw;
   height: 6vh;
 }
 
@@ -73,20 +74,21 @@ nav ul{
 /* Page 1 */
 
 .page1{
-  width: 100%;
-  margin-top: 100px;
+  width: 100vw;
+  margin-top: 90px;
   font-size: 50px;
   color: #ECF1F7;
   font-family: "Banbury", cursive;
   text-shadow: 0 0 10px #272727;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 15px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+  overflow-x: hidden;
 }
 
 .custom{
-  width: 100%;
+  width: 100vw;
   height: 50vh;
   background: url("/img/bgHome.jpg");
   background-size: cover;
@@ -97,46 +99,79 @@ nav ul{
   grid-area: 1 / 1 / auto / auto;
 }
 
-.custom-text{
+.custom-text, .new-text{
   height: 30vh;
   padding: 10px 0 0 5px;
+}
+
+.custom-text{
   animation: slideright 1s;
 }
 
-.button-cs{
+.new-text{
+  transform: translateX(-500px);
+  transition: transform 1s;
+}
+
+.button-cs, .button-trend, .button-new{
   width: 70px;
   height: 40px;
-  border: 3px solid #153F79;
-  align-self: flex-end;
-  margin-right: 10px; 
-  background-color: #ECF1F7;
+  border: 2px solid #ECF1F7;
+  border-radius: 10px;
   display:flex;
   justify-content: center;
   align-items: center;
-  animation: slideleft 2s;
   transition: 1s;
   overflow: hidden;
   cursor: pointer;
 }
 
-.button-cs:hover{
-  color: #ECF1F7;
+.button-cs, .button-new{
+  align-self: flex-end;
+  margin-right: 10px; 
+
+}
+
+.button-cs{
+  background-color: #153F79;
+  animation: slideleft 2s;
+}
+
+.button-new{
+  background-color: #626F8C;
+  transform: translateX(500px);
+  transition: transform 1s;
+} 
+
+.button-trend{
+  background-color: #272727;
+} 
+
+.button-trend .arrow{
+  transform: translateX(20px) rotate(180deg);
 }
 
 .arrow{
-  background: url("/img/arrow-blue.png");
+  background: url("/img/arrow-white.png");
   background-size: cover;
   width: 30px;
   height: 30px;
-  transform: translateX(-20px);
+
 }
 
-.button-cs:hover .arrow{
+.button-cs .arrow, .button-new .arrow{
+  transform: translate(-20px);
+}
+
+.button-cs:hover .arrow, .button-new:hover .arrow{
   animation: arrow 1s forwards;
+}
+.button-trend:hover .arrow{
+  animation: arrowleft 1s forwards;
 }
 
 .trend{
-  width: 100%;
+  width: 100vw;
   height: 50vh;
   background: url("/img/bgTrends.jpg");
   background-size: cover;
@@ -151,6 +186,14 @@ nav ul{
 .trend-text{
   padding: 0 5px 0 0;
   align-self: flex-end;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s; 
+}
+
+.reset div:not(.arrow){
+  transform: none;
+  opacity: 1;
 }
 
 .new{
@@ -163,14 +206,6 @@ nav ul{
   flex-direction: column;
   justify-content: space-around;
   grid-area: 3 / 1 / auto / auto;
-
-}
-
-.new-text{
-  height: 30vh;
-  padding: 10px 0 0 5px;
-  animation: slideright 1s;
-
 }
 
 @keyframes slideright{
@@ -188,8 +223,15 @@ nav ul{
 }
 
 @keyframes arrow{
-
-  100%{
+  to{
     transform: translateX(17px);
   }
 }
+
+@keyframes arrowleft{
+  to{
+    transform: translateX(-17px) rotate(180deg);
+
+  }
+}
+

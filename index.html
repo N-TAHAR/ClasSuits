@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
+  <script defer src="js/noframework.waypoints.min.js"></script>
+  <script defer src="js/waypoint.js"></script>
   <title>ClasSuits</title>
 </head>
 <body>
@@ -27,17 +29,20 @@
       </div>  
     </div>
 
-    <div class="trend">
+    <div class="trend" id="trends">
       <div class="trend-text">Trends</div>
-      <div class="button-trend"></div>
+      <div class="button-trend">
+        <div class="arrow"></div>
+      </div>
     </div>
 
-    <div class="new">
-      <div class="new-text">News</div>
-      <div class="button-new"></div>
+    <div class="new" id="news">
+      <div class="new-text" >News</div>
+      <div class="button-new">
+        <div class="arrow"></div>
+      </div>
     </div>
   </section>
-  <script src="/js/waypoint.js"></script>
-  <script src="/path/to/noframework.waypoints.min.js"></script>
+ 
 </body>
 </html>
