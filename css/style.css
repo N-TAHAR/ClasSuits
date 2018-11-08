@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: "Banbury";
+  src: url(/fonts/Banbury.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -15,6 +22,7 @@ body, html{
   margin: 0;
   background-color: #ECF1F7;
   color: #ECF1F7;
+  overflow-x: hidden;
 }
 
 /* NavBar Fixed */
@@ -33,10 +41,19 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
 }
 
 .burger{
-
+  width: 6vh;
+  height: 6vh;
 }
 
 .brand{
@@ -46,7 +63,11 @@ nav{
 }
 
 .shop{
-
+  background: url("/img/shop.png");
+  background-size: cover;
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
 }
 
 /* Page 1 */
@@ -54,6 +75,14 @@ nav{
 .page1{
   width: 100%;
   margin-top: 100px;
+  font-size: 50px;
+  color: #ECF1F7;
+  font-family: "Banbury", cursive;
+  text-shadow: 0 0 10px #272727;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
 }
 
 .custom{
@@ -62,4 +91,105 @@ nav{
   background: url("/img/bgHome.jpg");
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-area: 1 / 1 / auto / auto;
+}
+
+.custom-text{
+  height: 30vh;
+  padding: 10px 0 0 5px;
+  animation: slideright 1s;
+}
+
+.button-cs{
+  width: 70px;
+  height: 40px;
+  border: 3px solid #153F79;
+  align-self: flex-end;
+  margin-right: 10px; 
+  background-color: #ECF1F7;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideleft 2s;
+  transition: 1s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-cs:hover{
+  color: #ECF1F7;
+}
+
+.arrow{
+  background: url("/img/arrow-blue.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-20px);
+}
+
+.button-cs:hover .arrow{
+  animation: arrow 1s forwards;
+}
+
+.trend{
+  width: 100%;
+  height: 50vh;
+  background: url("/img/bgTrends.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-area: 2 / 1 / auto / auto;
+
+}
+
+.trend-text{
+  padding: 0 5px 0 0;
+  align-self: flex-end;
+}
+
+.new{
+  width: 100%;
+  height: 50vh;
+  background: url("/img/bgNews.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-area: 3 / 1 / auto / auto;
+
+}
+
+.new-text{
+  height: 30vh;
+  padding: 10px 0 0 5px;
+  animation: slideright 1s;
+
+}
+
+@keyframes slideright{
+  from{
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideleft{
+  from{
+    transform: translateX(500px);
+    opacity: 0;
+  }
+}
+
+@keyframes arrow{
+
+  100%{
+    transform: translateX(17px);
+  }
 }
