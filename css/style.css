@@ -87,6 +87,8 @@ nav ul{
   overflow-x: hidden;
 }
 
+/* section custom */
+
 .custom{
   width: 100vw;
   height: 50vh;
@@ -104,14 +106,20 @@ nav ul{
   padding: 10px 0 0 5px;
 }
 
+/* text of custom */
+
 .custom-text{
   animation: slideright 1s;
 }
+
+/* text of new */
 
 .new-text{
   transform: translateX(-500px);
   transition: transform 1s;
 }
+
+/* Button */
 
 .button-cs, .button-trend, .button-new{
   width: 70px;
@@ -140,11 +148,14 @@ nav ul{
 .button-new{
   background-color: #626F8C;
   transform: translateX(500px);
-  transition: transform 1s;
+  transition: transform 2s;
 } 
 
 .button-trend{
   background-color: #272727;
+  transform: translateX(-500px);
+  margin-left: 10px;
+  transition: transform 2s;
 } 
 
 .button-trend .arrow{
@@ -170,6 +181,8 @@ nav ul{
   animation: arrowleft 1s forwards;
 }
 
+/* section trend */
+
 .trend{
   width: 100vw;
   height: 50vh;
@@ -183,18 +196,25 @@ nav ul{
 
 }
 
+/* text of trend */
+
 .trend-text{
-  padding: 0 5px 0 0;
+  height: 30vh;
+  padding: 10px 5px 0 0;
   align-self: flex-end;
   transform: translateX(100px);
   opacity: 0;
   transition: transform 1s, opacity 1s; 
 }
 
+/* Reset js */
+
 .reset div:not(.arrow){
   transform: none;
   opacity: 1;
 }
+
+/* section new */
 
 .new{
   width: 100%;
@@ -207,6 +227,8 @@ nav ul{
   justify-content: space-around;
   grid-area: 3 / 1 / auto / auto;
 }
+
+/* keyframes */
 
 @keyframes slideright{
   from{
