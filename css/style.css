@@ -82,7 +82,7 @@ nav ul{
   text-shadow: 0 0 10px #272727;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 5px;
   overflow-x: hidden;
 }
@@ -148,14 +148,14 @@ nav ul{
 .button-new{
   background-color: #626F8C;
   transform: translateX(500px);
-  transition: transform 2s;
+  transition: transform 1s;
 } 
 
 .button-trend{
   background-color: #272727;
   transform: translateX(-500px);
   margin-left: 10px;
-  transition: transform 2s;
+  transition: transform 1s;
 } 
 
 .button-trend .arrow{
@@ -193,7 +193,6 @@ nav ul{
   flex-direction: column;
   justify-content: space-around;
   grid-area: 2 / 1 / auto / auto;
-
 }
 
 /* text of trend */
@@ -257,3 +256,90 @@ nav ul{
   }
 }
 
+.page2{
+  width: 100vw;
+  color: #153F79;
+  margin-top: 100px;
+
+
+
+}
+
+.how{
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.r-page{
+  transform: none;
+  opacity: 1;
+}
+
+.how ul{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;  
+  text-align: center;
+}
+
+.how h2{
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.how ul li{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #153F79;
+}
+
+.how ul li p{
+  font-size: 18px;
+  width: 300px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+.how ul li div{
+  margin-bottom: 20px;
+}
+
+.how ul li h3{
+  margin-bottom: 20px;
+}
+
+
+/* icon how it works */
+
+
+
+.img-value{
+  background: url(/img/dollar.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.img-shipping{
+  background: url(/img/receive-box.png);
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 40px;
+}
+
+.img-return{
+  background: url(/img/returns.png); 
+  background-size: cover;
+  width: 40px;
+  height: 40px; 
+}

@@ -13,3 +13,14 @@ ids.forEach(function(id) {
     offset: 250
   });
 });
+
+var page2 = document.getElementById("page2");
+console.log(page2);
+var waypoint = new Waypoint({
+  element: page2,
+  handler: function() {
+    console.log('reached')
+    page2.classList.add('r-page')
+  },
+  offset: 400
+});
