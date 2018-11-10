@@ -1,26 +1,54 @@
+// Page1 Trends/News appear
 var ids = ['trends', 'news'];
-
 
 ids.forEach(function(id) {
   var element = document.getElementById(id);
-  console.log(element);
   var waypoint = new Waypoint({
     element: element,
     handler: function() {
-      console.log('reached')
       element.classList.add('reset')
     },
-    offset: 250
+    offset: 350
   });
 });
 
+// Page2 How it works appear
 var page2 = document.getElementById("page2");
-console.log(page2);
 var waypoint = new Waypoint({
   element: page2,
   handler: function() {
-    console.log('reached')
     page2.classList.add('r-page')
   },
   offset: 400
 });
+
+// Footer Storelist appear
+
+var store = document.querySelectorAll('.storelist li h2');
+var after = document.querySelector('.storelist li h2::after');
+var uls = document.querySelectorAll('.storelist li ul');
+
+
+for(let i = 0; i < store.length; i++) {
+  store[i].addEventListener('click', function () {
+    if (uls[i].style.height == '250px') {
+      uls[i].style.height = '0px';
+      uls[i].style.opacity = '0';
+    }else{
+    uls[i].style.height = '250px';
+    uls[i].style.opacity = '1';
+    }
+  });
+
+  
+}
+
+for (let i = 0; i < store.length; i++) {
+  var waypoint = new Waypoint({
+    element: store[i],
+    handler: function() {
+      store[i].classList.add('anim')
+    },
+    offset: 550
+  });
+};
