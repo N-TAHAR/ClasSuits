@@ -9,13 +9,24 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <script defer src="js/noframework.waypoints.min.js"></script>
   <script defer src="js/waypoint.js"></script>
+  <script defer src="js/menu.js"></script>
   <title>ClasSuits</title>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li class="burger"></li>
+        <li class="burger" id="burger">
+          <ul>
+            <li>Suits</li>
+            <li>Pants</li>
+            <li>Accessories</li>
+            <li>Clearance</li>
+          </ul>
+          <div class="open" id="open">
+            <div class="open-icon"></div>
+          </div>
+        </li>
         <li class="brand">ClasSuits</li>
         <li class="shop"></li>
       </ul>

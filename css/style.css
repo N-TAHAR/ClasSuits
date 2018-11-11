@@ -40,6 +40,7 @@ header{
 
 nav{
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   width: 100vw;
@@ -47,14 +48,110 @@ nav{
 
 nav ul{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 95vw;
+  width: 75vw;
 }
 
+/* Menu Burger */
 .burger{
-  width: 6vw;
-  height: 6vh;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #153F79;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ECF1F7;
+  transition: height 0.5s, width 0.5s, top 0.1s, left 0.1s, border-radius 0.3s;
+}
+
+.is-open{
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0%;
+  top: 0;
+  left: 0;
+}
+
+.open{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #153F79;
+}
+
+.open-icon, .open-icon::before, .open-icon::after{
+  width: 32px;
+  height: 4px;
+  background-color: #ECF1F7;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 1s;
+}
+
+.open-icon::before, .open-icon::after{
+  content: '';
+  display:block;
+}
+
+.open-icon::before{
+  transform: translateY(-8px);
+}
+
+.open-icon::after{
+  transform: translateY(4px);
+}
+
+.burger.is-open .open-icon{
+  background-color: transparent;
+}
+
+.burger.is-open .open-icon::before{
+  transform: rotate(45deg) translateY(2px);
+}
+
+.burger.is-open .open-icon::after{
+  transform: rotate(-45deg) translateY(-4px);  
+}
+
+.burger ul{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(calc(-50% + 22px),calc(-50% + 22px)) scale(0);
+  transition: transform 0.5s, opacity 0.3s;
+  opacity: 0;
+}
+
+.burger.is-open ul{
+  transform: none;
+  opacity: 1;
+}
+
+.burger:not(.is-open) ul{
+  pointer-events: none;
+}
+
+.burger ul li{
+  font-size: 35px;
+  color: #ECF1F7;
+  text-transform: uppercase;
+}
+
+.burger ul li:not(:last-child){
+  margin-bottom: 40px;
 }
 
 .brand{
@@ -385,19 +482,20 @@ footer{
 }
 
 .storelist li h2 span{
-  content: '';
   display: block;
   background: #ECF1F7;
-  height: 3px;
+  height: 2px;
   width: 6%;
+  margin-top: 5px;
   z-index: -1;
+  transition: width 0.3s;
 }
-
 
 .storelist li h2{
   font-size: 30px;
   transform: translateX(-500px);
   font-weight: bold;
+  display:inline-block;
 }
 
 .storelist li ul{
@@ -409,7 +507,7 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  transition: height 1s, opacity 1s;
+  transition: height 1s, opacity 0.3s;
 }
 
 .bot{
